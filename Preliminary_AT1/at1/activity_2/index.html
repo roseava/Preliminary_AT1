@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity 2</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="activity-container">
+        <h1>Activity 2</h1>
+        <p>Enzymes are <input type="text" id="blank1" autocapitalize="characters"> since they <input type="text" id="blank2" autocapitalize="characters"> the process of chemical <input type="text" id="blank3" autocapitalize="characters">.</p>
+        <div class="word-bank">
+            <p>Word Bank:</p>
+            <ul>
+                <li><button onclick="fillBlank('REACTIONS')">REACTIONS</button></li>
+                <li><button onclick="fillBlank('CATALYSTS')">CATALYSTS</button></li>
+                <li><button onclick="fillBlank('QUICKEN')">QUICKEN</button></li>
+            </ul>
+        </div>
+        <button onclick="checkAnswers()">Submit</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
