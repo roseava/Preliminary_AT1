@@ -1,0 +1,46 @@
+#container {
+    text-align: center;
+    margin-top: 50px;
+    position: relative;
+}
+
+#diagram-container {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+#diagram {
+    max-width: 100%;
+    height: auto;
+}
+
+.label {
+    background-color: #fff;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: grab;
+    display: inline-block;
+    margin: 10px;
+}
+
+.data-box {
+    width: 100px;
+    height: 50px;
+    border: 1px solid #ccc;
+    margin: 0 10px;
+    display: inline-block;
+}
+
+#data-boxes {
+    margin-top: 20px;
+}
+
+#labels {
+    margin-top: 20px;
+}
+
+h1 {
+    color: dodgerblue; /* Set the color of all headings to green */
+    text-align: center; /* Center-align the text */
+}
