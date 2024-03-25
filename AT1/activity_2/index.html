@@ -7,7 +7,6 @@
 <link rel="stylesheet" type="text/css" href="styles.css">
 
 <style>
-    body 
     .container {
         margin: 50px auto;
         width: 80%;
@@ -23,6 +22,7 @@
     }
     #instructions {
         margin-bottom: 20px;
+        font-weight: bold;
     }
     .correct {
         background-color: lightgreen;
@@ -36,7 +36,7 @@
 <div class="container">
     <div id="instructions">
         <h1>Activity 2</h1>
-        <p>Please select a word from each dropdown to complete the sentence. Then click the "Check" button to verify your selections.</p>
+        <p><strong>Please select a word from each dropdown to complete the sentence. Then click the "Check" button to verify your selections.</strong></p>
     </div>
     <p>Enzymes are 
         <select id="blank1">
@@ -58,6 +58,26 @@
             <option value="REACTIONS">REACTIONS</option>
         </select>.
     </p>
+    <p>Enzyme 
+        <select id="blank4">
+            <option value="">---</option>
+            <option value="INHIBITORS">INHIBITORS</option>
+            <option value="COMPETITIVE">COMPETITIVE</option>
+            <option value="NON-COMPETITIVE">NON-COMPETITIVE</option>
+        </select> attach to the enzyme and prevent it from functioning. 
+        <select id="blank5">
+            <option value="">---</option>
+            <option value="INHIBITORS">INHIBITORS</option>
+            <option value="COMPETITIVE">COMPETITIVE</option>
+            <option value="NON-COMPETITIVE">NON-COMPETITIVE</option>
+        </select> inhibitors block the substrate from entering the active site. 
+        <select id="blank6">
+            <option value="">---</option>
+            <option value="INHIBITORS">INHIBITORS</option>
+            <option value="COMPETITIVE">COMPETITIVE</option>
+            <option value="NON-COMPETITIVE">NON-COMPETITIVE</option>
+        </select> inhibitors attach to any part of the enzyme which affects its ability to function.
+    </p>
     <button onclick="check()">Check</button>
     <div id="result"></div>
 </div>
@@ -66,48 +86,36 @@
         var blank1 = document.getElementById("blank1").value;
         var blank2 = document.getElementById("blank2").value;
         var blank3 = document.getElementById("blank3").value;
+        var blank4 = document.getElementById("blank4").value;
+        var blank5 = document.getElementById("blank5").value;
+        var blank6 = document.getElementById("blank6").value;
 
         var correct1 = "CATALYSTS";
         var correct2 = "QUICKEN";
         var correct3 = "REACTIONS";
+        var correct4 = "INHIBITORS";
+        var correct5 = "COMPETITIVE";
+        var correct6 = "NON-COMPETITIVE";
 
-        if (blank1 === correct1) {
-            document.getElementById("blank1").classList.add('correct');
-            document.getElementById("blank1").classList.remove('wrong');
-        } else {
-            document.getElementById("blank1").classList.add('wrong');
-            document.getElementById("blank1").classList.remove('correct');
+        var blanks = [blank1, blank2, blank3, blank4, blank5, blank6];
+        var corrects = [correct1, correct2, correct3, correct4, correct5, correct6];
+
+        for (var i = 0; i < blanks.length; i++) {
+            if (blanks[i] === corrects[i]) {
+                document.getElementById("blank" + (i + 1)).classList.add('correct');
+                document.getElementById("blank" + (i + 1)).classList.remove('wrong');
+            } else {
+                document.getElementById("blank" + (i + 1)).classList.add('wrong');
+                document.getElementById("blank" + (i + 1)).classList.remove('correct');
+            }
         }
 
-        if (blank2 === correct2) {
-            document.getElementById("blank2").classList.add('correct');
-            document.getElementById("blank2").classList.remove('wrong');
-        } else {
-            document.getElementById("blank2").classList.add('wrong');
-            document.getElementById("blank2").classList.remove('correct');
-        }
-
-        if (blank3 === correct3) {
-            document.getElementById("blank3").classList.add('correct');
-            document.getElementById("blank3").classList.remove('wrong');
-        } else {
-            document.getElementById("blank3").classList.add('wrong');
-            document.getElementById("blank3").classList.remove('correct');
-        }
-
-        if (blank1 === correct1 && blank2 === correct2 && blank3 === correct3) {
+        if (blanks.every((value, index) => value === corrects[index])) {
             document.getElementById("result").innerHTML = "Correct!";
             document.getElementById("result").style.backgroundColor = "lightgreen";
             document.querySelectorAll('select').forEach(function(el) {
                 el.classList.add('correct');
                 el.classList.remove('wrong');
-            });
-        } else if (blank1 !== correct1 && blank2 !== correct2 && blank3 !== correct3) {
-            document.getElementById("result").innerHTML = "Incorrect!";
-            document.getElementById("result").style.backgroundColor = "lightcoral";
-            document.querySelectorAll('select').forEach(function(el) {
-                el.classList.add('wrong');
-                el.classList.remove('correct');
             });
         } else {
             document.getElementById("result").innerHTML = "Incorrect!";
