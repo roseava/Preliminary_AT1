@@ -1,11 +1,14 @@
+body {
+    max-width: 700px; /* Set maximum width */
+    margin: 0 auto; /* Center content */
+    padding: 20px; /* Add some padding for spacing */
+}
+
 #container {
     text-align: center;
-    margin-top: 50px;
-    position: relative;
 }
 
 #diagram-container {
-    position: relative;
     margin-bottom: 20px;
 }
 
@@ -16,7 +19,7 @@
 
 .label {
     background-color: #fff;
-    padding: 5px 10px;
+    padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     cursor: grab;

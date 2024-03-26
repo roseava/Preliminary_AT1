@@ -1,43 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Activity 1</title>
-<link rel="stylesheet" href="styles.css">
-
-<style>
-    body {
-        max-width: 700px; /* Set maximum width */
-        margin: 0 auto; /* Center content */
-        padding: 20px; /* Add some padding for spacing */
-    }
-    #container {
-        text-align: center;
-    }
-    #diagram-container {
-        margin-bottom: 20px;
-    }
-    #data-boxes {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 20px;
-    }
-    .data-box {
-        width: 30px;
-        height: 30px;
-        border: 1px solid black;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .label {
-        margin: 10px;
-        padding: 10px;
-        border: 1px solid black;
-        cursor: move;
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity 1</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <style>
+        body {
+            max-width: 700px; /* Set maximum width */
+            margin: 0 auto; /* Center content */
+            padding: 20px; /* Add some padding for spacing */
+        }
+        #container {
+            text-align: center;
+        }
+        #diagram-container {
+            margin-bottom: 20px;
+        }
+        #data-boxes {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .data-box {
+            width: 300px; /* Adjusted width */
+            height: 30px;
+            border: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .label {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid black;
+            cursor: move;
+        }
+        img {
+            max-width: 100%; /* Ensure images don't exceed their container */
+            height: auto; /* Maintain aspect ratio */
+            display: block; /* Ensure image is centered */
+            margin: 0 auto; /* Center image */
+        }
+    </style>
 </head>
 <body>
 
