@@ -6,6 +6,7 @@
 <title>Fill in the Blank</title>
 <link rel="stylesheet" type="text/css" href="styles.css">
 
+<!-- Styles for the body, container, select dropdowns, result message, instructions, correct answer and wrong answer-->
 <style>
     body {
         max-width: 700px; /* Set maximum width */
@@ -40,10 +41,12 @@
     <!-- Home button -->
     <a href="../index.html" class="home-button">Home</a><br><br>
 
+    <!-- Instructions -->
     <div id="instructions">
         <h1>Activity 2</h1>
         <p><strong>Please select a word from each dropdown to complete the sentence. Then click the "Check" button to verify your selections.</strong></p>
     </div>
+    <!-- The Fill in the Blanks Activity-->
     <p>Enzymes are 
         <select id="blank1">
             <option value="">---</option>
@@ -84,11 +87,16 @@
             <option value="NON-COMPETITIVE">NON-COMPETITIVE</option>
         </select> inhibitors attach to any part of the enzyme which affects its ability to function.
     </p>
+
+    <!-- The Check button that will verify answers -->
     <button onclick="check()">Check</button>
     <div id="result"></div>
 </div>
+
+<!-- JavaScript -->
 <script>
     function check() {
+        // Values of the selected options  
         var blank1 = document.getElementById("blank1").value;
         var blank2 = document.getElementById("blank2").value;
         var blank3 = document.getElementById("blank3").value;
@@ -96,6 +104,7 @@
         var blank5 = document.getElementById("blank5").value;
         var blank6 = document.getElementById("blank6").value;
 
+        // Correct answers are here
         var correct1 = "CATALYSTS";
         var correct2 = "QUICKEN";
         var correct3 = "REACTIONS";
@@ -103,9 +112,11 @@
         var correct5 = "COMPETITIVE";
         var correct6 = "NON-COMPETITIVE";
 
+        // Array of selected values and correct values
         var blanks = [blank1, blank2, blank3, blank4, blank5, blank6];
         var corrects = [correct1, correct2, correct3, correct4, correct5, correct6];
 
+        // Check if the values are correct
         for (var i = 0; i < blanks.length; i++) {
             if (blanks[i] === corrects[i]) {
                 document.getElementById("blank" + (i + 1)).classList.add('correct');
@@ -116,6 +127,7 @@
             }
         }
 
+        // Check if all of the values are correct
         if (blanks.every((value, index) => value === corrects[index])) {
             document.getElementById("result").innerHTML = "Correct!";
             document.getElementById("result").style.backgroundColor = "lightgreen";

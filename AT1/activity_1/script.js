@@ -1,7 +1,9 @@
 document.addEventListener("DOMContentLoaded", function() {
+    // Select all elements with the class 'label' and 'data-box'
     const labels = document.querySelectorAll('.label');
     const dataBoxes = document.querySelectorAll('.data-box');
 
+// Dragging the labels 
     labels.forEach(label => {
         label.addEventListener('dragstart', function(event) {
             event.dataTransfer.setData('text', event.target.id);
